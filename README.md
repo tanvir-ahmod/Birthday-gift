@@ -1,5 +1,7 @@
 ## Birthday-App-Android-
 
+#open it with Android Studio 2.2 or later
+
 This project is to send a gift to the birthday person an android app.
 
 Just open Calculation.java and edit the name + date and publish the app and install to the birday person's android phone.
