@@ -1,13 +1,14 @@
 ## Birthday-App-Android-
 
-#open it with Android Studio 2.2 or later
-
 This project is to send a gift to the birthday person an android app.
 
-Just open Calculation.java and edit the name + date and publish the app and install to the birday person's android phone.
+## Installation
 
-A video will be played when the time comes.
+open it with Android Studio 2.2 or later
 
-video can also be edited. open the res>raw folder. replace the video with yours. Name it video.mp4. Otherwise u also have to change the name from code.
+## Gifting
 
-Happy Coding! :)
+Just open Calculation.java and edit the name + date and publish the app and install to the birday person's android phone. A video will be played when the time comes.
+
+**video can also be edited. open the res>raw folder. replace the video with yours. Name it video.mp4. Otherwise u also have to change the name from code.**
+
