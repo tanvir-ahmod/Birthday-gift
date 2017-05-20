@@ -16,9 +16,9 @@ import java.util.concurrent.TimeUnit;
 public class CalculateTime extends Service {
 
     private boolean quit = false;
-    public static int bithdDate = 10;
-    public static int  birthMonth = 2; // 0 based index
-    public static String NAME = "Tamim";
+    public static int bithdDate = 22;
+    public static int  birthMonth = 4; // 0 based index
+    public static String NAME = "Oliza apu";
     private Calendar birthDay;
     private static Context context;
 
