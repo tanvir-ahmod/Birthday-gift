@@ -21,10 +21,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         initialize();
-        //setAlarm();
+        setAlarm();
 
         stopService(new Intent(this, CalculateTime.class));
-        //startNotifying();
+        startNotifying();
 
 
     }

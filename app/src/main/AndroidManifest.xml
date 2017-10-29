@@ -11,7 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
-            <intent-filter>
+			<intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -28,7 +28,7 @@
             android:label="HAPPY BIRTHDAY!!!"
             android:screenOrientation="landscape"
             android:theme="@style/FullScreen">
-
+            
         </activity>
 
         <receiver android:name=".BootTimeAlarm">
