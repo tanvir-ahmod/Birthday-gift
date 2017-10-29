@@ -23,7 +23,13 @@
             android:name=".Surprise"
             android:label="HAPPY BIRTHDAY!!!"
             android:screenOrientation="landscape"
-            android:theme="@style/FullScreen" />
+            android:theme="@style/FullScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
 
         <receiver android:name=".BootTimeAlarm">
             <intent-filter>
@@ -35,13 +41,6 @@
             android:enabled="true"
             android:exported="true" />
 
-        <activity android:name=".TextSwitcherTest">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
     </application>
 
 </manifest>

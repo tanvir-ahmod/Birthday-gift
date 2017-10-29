@@ -91,13 +91,12 @@ public class MainActivity extends AppCompatActivity {
         secondHeader.setTypeface(t);*/
 
         currentTime = Calendar.getInstance();
-
         birthDay = setBirthdayTime();
     }
 
     public static Calendar setBirthdayTime() {
         Calendar tempBirthDay = Calendar.getInstance();
-        tempBirthDay.set(Calendar.DAY_OF_MONTH, CalculateTime.bithdDate);
+        tempBirthDay.set(Calendar.DAY_OF_MONTH, CalculateTime.birthDate);
         tempBirthDay.set(Calendar.MONTH, CalculateTime.birthMonth);
         tempBirthDay.set(Calendar.HOUR_OF_DAY, 0);
         tempBirthDay.set(Calendar.MINUTE, 0);
