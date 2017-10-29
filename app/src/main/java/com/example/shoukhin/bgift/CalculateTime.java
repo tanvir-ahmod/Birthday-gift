@@ -8,7 +8,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.IBinder;
 import android.support.annotation.Nullable;
-import android.widget.Toast;
 
 import java.util.Calendar;
 import java.util.concurrent.TimeUnit;
@@ -16,16 +15,15 @@ import java.util.concurrent.TimeUnit;
 public class CalculateTime extends Service {
 
     private boolean quit = false;
-    public static int bithdDate = 22;
-    public static int  birthMonth = 4; // 0 based index
-    public static String NAME = "Oliza apu";
+    public static int bithdDate = 3;
+    public static int birthMonth = 7; // 0 based index
+    public static String NAME = "Misty";
     private Calendar birthDay;
-    private static Context context;
+    //private Context context;
 
 
     public CalculateTime() {
     }
-
 
 
     @Override
@@ -33,9 +31,9 @@ public class CalculateTime extends Service {
 
         birthDay = MainActivity.setBirthdayTime();
 
-        context = this;
+        //context = this;
 
-       // MainActivity.show("service started");
+        // MainActivity.show("service started");
 
         new Thread() {
             @Override
@@ -46,7 +44,7 @@ public class CalculateTime extends Service {
 
                     try {
                         Thread.sleep(1000);
-                    } catch (InterruptedException e) {
+                    } catch (InterruptedException ignored) {
                     }
                 }
             }
@@ -65,26 +63,24 @@ public class CalculateTime extends Service {
         long diffMinute = TimeUnit.MILLISECONDS.toMinutes(diff) - TimeUnit.HOURS.toMinutes(TimeUnit.MILLISECONDS.toHours(diff));
         long diffSecond = TimeUnit.MILLISECONDS.toSeconds(diff) - TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(diff));
 
-        //MainActivity.show("" + diffSecond);
+        Intent intnt = new Intent(this, MainActivity.class);
+        PendingIntent pIntent = PendingIntent.getActivity(this, 0, intnt, 0);
 
-        Intent intnt = new Intent(context, MainActivity.class);
-
-        PendingIntent pIntent = PendingIntent.getActivity(context, 0, intnt, 0);
-
-        Notification n = new Notification.Builder(context)
+        Notification n = new Notification.Builder(this)
                 .setContentTitle("Remaining Time").setContentText(diffDay + " Days " + diffHour + " Hours " + diffMinute + " Min " + diffSecond + " s")
                 .setContentIntent(pIntent).setSmallIcon(R.drawable.notification_icon)
                 .build();
 
         NotificationManager mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
 
-        mNotificationManager.notify(0, n);
+        if (mNotificationManager != null)
+            mNotificationManager.notify(0, n);
     }
 
     @Override
     public void onDestroy() {
-        quit = true;
         super.onDestroy();
+        quit = true;
 
     }
 

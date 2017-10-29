@@ -11,11 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
 
         <service
@@ -27,7 +23,7 @@
             android:name=".Surprise"
             android:label="HAPPY BIRTHDAY!!!"
             android:screenOrientation="landscape"
-            android:theme="@style/FullScreen"/>
+            android:theme="@style/FullScreen" />
 
         <receiver android:name=".BootTimeAlarm">
             <intent-filter>
@@ -37,7 +33,15 @@
         <receiver
             android:name=".Alarm"
             android:enabled="true"
-            android:exported="true"></receiver>
+            android:exported="true" />
+
+        <activity android:name=".TextSwitcherTest">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

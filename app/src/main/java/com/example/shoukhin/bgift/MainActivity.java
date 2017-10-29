@@ -4,25 +4,20 @@ import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
-import android.widget.TextView;
 
 import java.util.Calendar;
-import java.util.concurrent.TimeUnit;
 
 public class MainActivity extends AppCompatActivity {
 
-    TextView name, day, hour, minute, second;
-    TextView patiendHeader, dayHeader, hourHeader, minuteHeader, secondHeader;
+    //TextView name, day, hour, minute, second;
+    // TextView patiendHeader, dayHeader, hourHeader, minuteHeader, secondHeader;
 
     private static Calendar currentTime;
     private static Calendar birthDay;
 
-    private boolean flag = true;
+    // private boolean flag = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,10 +25,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         initialize();
-        calculateTime();
+        //calculateTime();
         setAlarm();
 
-        stopService(new Intent(getBaseContext(), CalculateTime.class));
+        //stopService(new Intent(getBaseContext(), CalculateTime.class));
 
         if (currentTime.get(Calendar.MONTH) == birthDay.get(Calendar.MONTH) && currentTime.get(Calendar.DAY_OF_MONTH) == birthDay.get(Calendar.DAY_OF_MONTH)) {
             //surprise starts
@@ -51,21 +46,23 @@ public class MainActivity extends AppCompatActivity {
         birthDay = setBirthdayTime();
 
         //if alarm time is greater than current time
-        if(birthDay.getTimeInMillis() > currentTime.getTimeInMillis()) {
+        if (birthDay.getTimeInMillis() > currentTime.getTimeInMillis()) {
 
             Intent intent = new Intent(this, Alarm.class);
             PendingIntent mAlarmSender = PendingIntent.getBroadcast(this, 0,
                     intent, 0);
 
             AlarmManager alarmMgr = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
-            alarmMgr.set(AlarmManager.RTC_WAKEUP, birthDay.getTimeInMillis(), mAlarmSender);
+            if (alarmMgr != null) {
+                alarmMgr.set(AlarmManager.RTC_WAKEUP, birthDay.getTimeInMillis(), mAlarmSender);
+            }
 
         }
 
     }
 
     private void initialize() {
-        name = (TextView) findViewById(R.id.name_tbx);
+       /* name = (TextView) findViewById(R.id.name_tbx);
         day = (TextView) findViewById(R.id.day_tbx);
         hour = (TextView) findViewById(R.id.hour_tbx);
         minute = (TextView) findViewById(R.id.minute_tbx);
@@ -91,15 +88,14 @@ public class MainActivity extends AppCompatActivity {
         dayHeader.setTypeface(t);
         hourHeader.setTypeface(t);
         minuteHeader.setTypeface(t);
-        secondHeader.setTypeface(t);
+        secondHeader.setTypeface(t);*/
 
         currentTime = Calendar.getInstance();
 
         birthDay = setBirthdayTime();
     }
 
-    public static Calendar setBirthdayTime()
-    {
+    public static Calendar setBirthdayTime() {
         Calendar tempBirthDay = Calendar.getInstance();
         tempBirthDay.set(Calendar.DAY_OF_MONTH, CalculateTime.bithdDate);
         tempBirthDay.set(Calendar.MONTH, CalculateTime.birthMonth);
@@ -110,12 +106,10 @@ public class MainActivity extends AppCompatActivity {
         return (Calendar) tempBirthDay.clone();
     }
 
-    private void calculateTime() {
+    /*private void calculateTime() {
         new Thread() {
             public void run() {
-
                 while (flag) {
-
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
@@ -147,16 +141,11 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         }.start();
-    }
+    }*/
 
-    public static void show(String data) {
+   /* public static void show(String data) {
         Log.d("tag", data);
-    }
+    }*/
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        flag = false;
-    }
 
 }
