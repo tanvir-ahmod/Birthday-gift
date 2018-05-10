@@ -10,7 +10,7 @@ Send it to the user and tell him/her to wait until the surprise comes!
 
 After installing in android device
 
-![Home](/Screenshots/layout-2018-05-10-195412.png =100x200)
+![Home](/Screenshots/layout-2018-05-10-195412.png)
 
 ## Generating the gift
 
