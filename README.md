@@ -1,14 +1,29 @@
-## Birthday-App-Android-
+# Birthday-App-Android-
 
 This project is to send a gift to the birthday person an android app.
 
-## Installation
+Just set the name, text you want to show, birth day, month, time generate an APK.
 
-open it with Android Studio 2.2 or later
+Send it to the user and tell him/her to wait until the surprise comes!
 
-## Gifting
+## Screenshots
 
-Just open Calculation.java and edit the name + date and publish the app and install to the birday person's android phone. A video will be played when the time comes.
+After installing in android device
 
-**video can also be edited. open the res>raw folder. replace the video with yours. Name it video.mp4. Otherwise u also have to change the name from code.**
+![Home](/Screenshots/layout-2018-05-10-195412.png)
 
+## Generating the gift
+
+
+1. Open **app/src/main/java/com/example/shoukhin/bgift/CalculateTime.java** and edit the name, date etc that you want to edit.
+
+2. To change previewed text, open **app/src/main/res/values/strings.xml** and replace the variable **letter_text**'s value with your desired text.
+
+3. To change the video go to **app/src/main/res/raw** and replace the **video.mp4** with your desired video.
+**Note : keep the video name 'video.mp4' otherwise u have to change the name of the video from app/src/main/java/com/example/shoukhin/bgift/Surprise.java**
+
+4. Generate APK. (In android studio **Build->Generate Signed APK**)
+
+5. Install to the birthday person's android device.
+
+6. Wait until the time his/her birthday!
