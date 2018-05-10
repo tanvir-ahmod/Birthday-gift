@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
         currentTime = Calendar.getInstance();
         birthDay = setBirthdayTime();
 
-        String text = "Dear " + CalculateTime.NAME + ",\n\n" + getResources().getString(R.string.letter_text);
+        String text = "" + CalculateTime.NAME + ",\n\n" + getResources().getString(R.string.letter_text);
         TextView textView = findViewById(R.id.text);
         textView.setText(text);
     }

@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Gift</string>
-    <string name="letter_text">Perhaps you can guess when this app will perform it\'s task.
-        \n\nSincerely yours,\nShoukhin
+    <string name="letter_text">App will be started when proper time comes. Be patient :)
+        \n\n—Shoukhin
     </string>
 </resources>

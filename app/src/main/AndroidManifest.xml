@@ -27,8 +27,7 @@
             android:name=".Surprise"
             android:label="HAPPY BIRTHDAY!!!"
             android:screenOrientation="landscape"
-            android:theme="@style/FullScreen">
-            
+            android:theme="@style/FullScreen">            
         </activity>
 
         <receiver android:name=".BootTimeAlarm">
