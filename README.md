@@ -10,7 +10,7 @@ Send it to the user and tell him/her to wait until the surprise comes!
 
 After installing in android device
 
-<img src="https://github.com/tanvir-ahmod/Birthday-App-Android-/blob/master/Screenshots/Screenshot_2020-05-04-18-22-03-771.jpg" alt="Screenshot" width="200" height ="200">
+<img src="https://github.com/tanvir-ahmod/Birthday-App-Android-/blob/master/Screenshots/Screenshot_2020-05-04-18-22-03-771.jpg" alt="Screenshot" width="320" height ="693">
 
 
 ## Generating the gift
