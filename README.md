@@ -15,15 +15,17 @@ After installing in android device
 ## Generating the gift
 
 
-1. Open **app/src/main/java/com/example/shoukhin/bgift/CalculateTime.java** and edit the name, date etc that you want to edit.
+* Open [Constants.java](https://github.com/tanvir-ahmod/Birthday-App-Android-/blob/develop/app/src/main/java/com/example/shoukhin/bgift/Constants.java)  and edit the variables TARGET_MONTH or TARGET_DATE or other variables and set to the time you want to play.
 
-2. To change previewed text, open **app/src/main/res/values/strings.xml** and replace the variable **letter_text**'s value with your desired text.
+* To change receiver name, open [String.xml](https://github.com/tanvir-ahmod/Birthday-App-Android-/blob/develop/app/src/main/java/com/example/shoukhin/bgift/Constants.java) and replace the variable receiver_name's value with your receiver name.
 
-3. To change the video go to **app/src/main/res/raw** and replace the **video.mp4** with your desired video.
-**Note : keep the video name 'video.mp4' otherwise u have to change the name of the video from app/src/main/java/com/example/shoukhin/bgift/Surprise.java**
+* To change preview text at home page, open [String.xml](https://github.com/tanvir-ahmod/Birthday-App-Android-/blob/develop/app/src/main/java/com/example/shoukhin/bgift/Constants.java) and replace the variable letter_text's value with your text.
 
-4. Generate APK. (In android studio **Build->Generate Signed APK**)
+* To change the video go to [Asset](https://github.com/tanvir-ahmod/Birthday-App-Android-/blob/develop/app/src/main/java/com/example/shoukhin/bgift/Constants.java) and replace the video.mp4 with your video.
+Note : keep the video name 'video.mp4' otherwise you have to change the name of the video from [Surprise.java](https://github.com/tanvir-ahmod/Birthday-App-Android-/blob/develop/app/src/main/java/com/example/shoukhin/bgift/Constants.java)
 
-5. Install to the birthday person's android device.
+* Generate APK. (In android studio **Build->Generate Signed APK**)
 
-6. Wait until the time his/her birthday!
+* Install to the person's android device that you want to play.
+
+* Wait until the time his/her birthday!
