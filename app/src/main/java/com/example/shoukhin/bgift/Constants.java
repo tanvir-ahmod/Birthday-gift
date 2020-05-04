@@ -4,7 +4,7 @@ import java.util.Calendar;
 
 final class Constants {
     private static final int TARGET_MONTH = 4; // 0 based index
-    private static final int TARGET_DATE = 4;
+    private static final int TARGET_DATE = 5;
     private static final int TARGET_HOUR = 0;
     private static final int TARGET_MINUTE = 0;
     private static final int TARGET_SECOND = 0;
