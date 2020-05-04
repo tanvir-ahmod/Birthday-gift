@@ -10,7 +10,7 @@ Send it to the user and tell him/her to wait until the surprise comes!
 
 After installing in android device
 
-<img src="https://github.com/tanvir-ahmod/Birthday-App-Android-/blob/master/Screenshots/Screenshot_2020-05-04-18-22-03-771.jpg" alt="Screenshot" style="width:200;height:200">
+<img src="https://github.com/tanvir-ahmod/Birthday-App-Android-/blob/master/Screenshots/Screenshot_2020-05-04-18-22-03-771.jpg" alt="Screenshot" width="200" height ="200">
 
 
 ## Generating the gift
@@ -23,7 +23,7 @@ After installing in android device
 * To change preview text at home page, open [String.xml](https://github.com/tanvir-ahmod/Birthday-App-Android-/blob/master/app/src/main/res/values/strings.xml) and replace the variable letter_text's value with your text.
 
 * To change the video go to [raw](https://github.com/tanvir-ahmod/Birthday-App-Android-/tree/master/app/src/main/res/raw) and replace the video.mp4 with your video.
-Note : keep the video name 'video.mp4' otherwise you have to change the name of the video from [Surprise.java](https://github.com/tanvir-ahmod/Birthday-App-Android-/blob/master/app/src/main/java/com/example/shoukhin/bgift/Surprise.java)
+<br />Note : keep the video name 'video.mp4' otherwise you have to change the name of the video from [Surprise.java](https://github.com/tanvir-ahmod/Birthday-App-Android-/blob/master/app/src/main/java/com/example/shoukhin/bgift/Surprise.java)
 
 * Generate APK. (In android studio **Build->Generate Signed APK**)
 
