@@ -18,7 +18,7 @@ public class BootTimeAlarm extends BroadcastReceiver {
         if (Intent.ACTION_BOOT_COMPLETED.equals(intent.getAction())) {
             //setting boot time alarm,
             Calendar currentTime = Calendar.getInstance();
-            Calendar birthDay = MainActivity.setBirthdayTime();
+            Calendar birthDay = Constants.getTargetCalendar();
 
             //if alarm time is greater than current time
             if (birthDay.getTimeInMillis() > currentTime.getTimeInMillis()) {
@@ -26,17 +26,13 @@ public class BootTimeAlarm extends BroadcastReceiver {
                 Intent intnt = new Intent(context, Alarm.class);
                 // Schedule the alarm!
                 PendingIntent mAlarmSender = PendingIntent.getBroadcast(context, 0,
-                        intent, 0);
+                        intnt, 0);
 
                 AlarmManager alarmMgr = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
                 if (alarmMgr != null) {
                     alarmMgr.set(AlarmManager.RTC_WAKEUP, birthDay.getTimeInMillis(), mAlarmSender);
                 }
-
-                context.startService(new Intent(context, CalculateTime.class));
             }
         }
-
-
     }
 }

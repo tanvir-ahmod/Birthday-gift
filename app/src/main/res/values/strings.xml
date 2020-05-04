@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Gift</string>
+    <string name="receiver_name">Name</string>
     <string name="letter_text">App will be started when proper time comes. Be patient :)
-        \n\n—Shoukhin
+        \n\n—Name
     </string>
 </resources>

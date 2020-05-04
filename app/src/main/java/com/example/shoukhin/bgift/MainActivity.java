@@ -4,7 +4,9 @@ import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.os.Bundle;
 import android.widget.TextView;
 
@@ -25,12 +27,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         initialize();
+        setBirthdayTime();
         setAlarm();
-
         initCountDown();
-
-        stopService(new Intent(this, CalculateTime.class));
-        startNotifying();
+        CheckTime();
     }
 
     private void initCountDown() {
@@ -40,7 +40,6 @@ public class MainActivity extends AppCompatActivity {
     public void setAlarm() {
 
         currentTime = Calendar.getInstance();
-        birthDay = setBirthdayTime();
 
         //if alarm time is greater than current time
         if (birthDay.getTimeInMillis() > currentTime.getTimeInMillis()) {
@@ -56,37 +55,32 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private void startNotifying(){
-         if (currentTime.get(Calendar.MONTH) == birthDay.get(Calendar.MONTH)
-                && currentTime.get(Calendar.DAY_OF_MONTH) == birthDay.get(Calendar.DAY_OF_MONTH)) {
-
+    private void CheckTime() {
+        if (targetTimeCame()) {
+            //surprise starts
             Intent i = new Intent(this, Surprise.class);
             i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK); // set the new task and clear flags
-            startActivity(i); //surprise starts
-        } else
-            startService(new Intent(this, CalculateTime.class));
+            startActivity(i);
+        }
+    }
+
+    private boolean targetTimeCame() {
+        return currentTime.get(Calendar.MONTH) == birthDay.get(Calendar.MONTH)
+                && currentTime.get(Calendar.DAY_OF_MONTH)
+                == birthDay.get(Calendar.DAY_OF_MONTH);
     }
 
     private void initialize() {
-
         currentTime = Calendar.getInstance();
-        birthDay = setBirthdayTime();
 
-        String text = "" + CalculateTime.NAME + ",\n\n" + getResources().getString(R.string.letter_text);
+        String text = "" + getResources().getString(R.string.receiver_name) + ",\n\n" + getResources().getString(R.string.letter_text);
         TextView textView = findViewById(R.id.text);
         textView.setText(text);
 
         timerProgramCountdown = findViewById(R.id.timerProgramCountdown);
     }
 
-    public static Calendar setBirthdayTime() {
-        Calendar tempBirthDay = Calendar.getInstance();
-        tempBirthDay.set(Calendar.DAY_OF_MONTH, CalculateTime.birthDate);
-        tempBirthDay.set(Calendar.MONTH, CalculateTime.birthMonth);
-        tempBirthDay.set(Calendar.HOUR_OF_DAY, 0);
-        tempBirthDay.set(Calendar.MINUTE, 0);
-        tempBirthDay.set(Calendar.SECOND, 0);
-
-        return (Calendar) tempBirthDay.clone();
+    private void setBirthdayTime() {
+        birthDay = Constants.getTargetCalendar();
     }
 }
