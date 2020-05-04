@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/BGift.iml" filepath="$PROJECT_DIR$/BGift.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Birthday-App-Android-.iml" filepath="$PROJECT_DIR$/Birthday-App-Android-.iml" group="Birthday-App-Android-" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="Birthday-App-Android-/app" />
     </modules>
   </component>
 </project>

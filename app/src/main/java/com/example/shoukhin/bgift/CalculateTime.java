@@ -7,7 +7,7 @@ import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
 import android.os.IBinder;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 
 import java.util.Calendar;
 import java.util.concurrent.TimeUnit;
@@ -15,11 +15,10 @@ import java.util.concurrent.TimeUnit;
 public class CalculateTime extends Service {
 
     private boolean quit = false;
-    public static final int birthDate = 18;
-    public static final int birthMonth = 0; // 0 based index
-    public static final String NAME = "Ammu";
+    public static final int birthDate = 5;
+    public static final int birthMonth = 4; // 0 based index
+    public static final String NAME = "Test";
     private Calendar birthDay;
-    //private Context context;
 
 
     public CalculateTime() {

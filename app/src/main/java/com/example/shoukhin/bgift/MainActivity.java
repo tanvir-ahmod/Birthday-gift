@@ -4,9 +4,11 @@ import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
+
+import com.asp.fliptimerviewlibrary.CountDownClock;
 
 import java.util.Calendar;
 
@@ -14,6 +16,8 @@ public class MainActivity extends AppCompatActivity {
 
     private Calendar currentTime;
     private Calendar birthDay;
+
+    private CountDownClock timerProgramCountdown;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,10 +27,14 @@ public class MainActivity extends AppCompatActivity {
         initialize();
         setAlarm();
 
+        initCountDown();
+
         stopService(new Intent(this, CalculateTime.class));
         startNotifying();
+    }
 
-
+    private void initCountDown() {
+        timerProgramCountdown.startCountDown(birthDay.getTimeInMillis() - currentTime.getTimeInMillis());
     }
 
     public void setAlarm() {
@@ -59,8 +67,6 @@ public class MainActivity extends AppCompatActivity {
             startService(new Intent(this, CalculateTime.class));
     }
 
-
-
     private void initialize() {
 
         currentTime = Calendar.getInstance();
@@ -69,6 +75,8 @@ public class MainActivity extends AppCompatActivity {
         String text = "" + CalculateTime.NAME + ",\n\n" + getResources().getString(R.string.letter_text);
         TextView textView = findViewById(R.id.text);
         textView.setText(text);
+
+        timerProgramCountdown = findViewById(R.id.timerProgramCountdown);
     }
 
     public static Calendar setBirthdayTime() {

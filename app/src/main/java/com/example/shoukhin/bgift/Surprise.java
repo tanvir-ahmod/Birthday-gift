@@ -2,15 +2,12 @@ package com.example.shoukhin.bgift;
 
 import android.media.MediaPlayer;
 import android.net.Uri;
-import android.os.CountDownTimer;
-import android.support.v7.app.AppCompatActivity;
+
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.MediaController;
 import android.widget.VideoView;
-
-import java.net.URI;
 
 public class Surprise extends AppCompatActivity {
 
