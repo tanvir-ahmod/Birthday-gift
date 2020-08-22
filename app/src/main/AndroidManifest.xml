@@ -10,7 +10,8 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity"
+            android:screenOrientation="portrait">
 			<intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -20,9 +21,9 @@
 
         <activity
             android:name=".Surprise"
+            android:theme="@style/FullScreen"
             android:label="HAPPY BIRTHDAY!!!"
-            android:screenOrientation="landscape"
-            android:theme="@style/FullScreen">            
+            android:screenOrientation="landscape">
         </activity>
 
         <receiver android:name=".BootTimeAlarm">
