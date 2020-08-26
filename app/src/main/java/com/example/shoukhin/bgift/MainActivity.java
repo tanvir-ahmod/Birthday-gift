@@ -15,10 +15,8 @@ import com.asp.fliptimerviewlibrary.CountDownClock;
 import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity {
-
     private Calendar currentTime;
-    private Calendar birthDay;
-
+    private final Calendar birthDay = Constants.getTargetCalendar();;
     private CountDownClock timerProgramCountdown;
 
     @Override
@@ -27,7 +25,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         initialize();
-        setBirthdayTime();
         setAlarm();
         initCountDown();
         CheckTime();
@@ -38,19 +35,17 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void setAlarm() {
-
         currentTime = Calendar.getInstance();
 
-        //if alarm time is greater than current time
         if (birthDay.getTimeInMillis() > currentTime.getTimeInMillis()) {
 
             Intent intent = new Intent(this, Alarm.class);
-            PendingIntent mAlarmSender = PendingIntent.getBroadcast(this, 0,
+            PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 0,
                     intent, 0);
 
-            AlarmManager alarmMgr = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
-            if (alarmMgr != null) {
-                alarmMgr.set(AlarmManager.RTC_WAKEUP, birthDay.getTimeInMillis(), mAlarmSender);
+            AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+            if (alarmManager != null) {
+                alarmManager.setExactAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, birthDay.getTimeInMillis(), pendingIntent);
             }
         }
     }
@@ -80,7 +75,4 @@ public class MainActivity extends AppCompatActivity {
         timerProgramCountdown = findViewById(R.id.timerProgramCountdown);
     }
 
-    private void setBirthdayTime() {
-        birthDay = Constants.getTargetCalendar();
-    }
 }
